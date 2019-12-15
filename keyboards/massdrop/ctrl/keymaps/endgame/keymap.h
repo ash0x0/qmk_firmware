@@ -58,11 +58,14 @@ enum layout_names {
 enum tapdance_keycodes {
     TD_LGUI_ML = 0,     // Tap dance key to switch to mouse layer _ML
     TD_CTRL_TERM,       // Tap dance key to open terminal on LCTRL double press
+<<<<<<< HEAD
     TD_LSFT_CAPS,       /* Tap dance key to toggle CAPS LOCK on SHIFT double press
                             Note that this can override some shortcuts in some IDE's.
                             RSFT is left clear of modifications and should replace LSFT in such case */
     TD_CTRL_CL,         // Tap dance key to toggle CTRL Layer
     TD_LSFT_SL,         // Tap dance key to toggle SHIFT Layer
+=======
+>>>>>>> origin/massdrop_ctrl_merge
 };
 
 enum ctrl_keycodes {

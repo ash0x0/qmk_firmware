@@ -45,6 +45,12 @@ uint16_t rgb_time_out_seconds;          // Idle LED timeout value, in seconds no
 uint16_t rgb_time_out_saved_seconds;    // The saved user config for RGB timeout period
 led_flags_t rgb_time_out_saved_flag;    // Store LED flag before timeout so it can be restored when LED is turned on again.
 
+bool keyboard_locked;
+
+void set_toggle_led(int layer, int index, bool enable);
+void set_led_color(int layer, int i);
+void set_layer_color(int layer);
+
 enum layout_names {
     _KL=0,       // Keys Layout: The main keyboard layout that has all the characters
     _FL,         // Function Layout: The function key activated layout with default functions and some added ones
@@ -52,6 +58,7 @@ enum layout_names {
     _GL,         // GIT Layout: GIT shortcuts and macros
     _VL,         // VIM Layout: VIM shorcuts and macros
     _YL,         // Yakuake Layout: Yakuake drop-down terminal shortcuts and macros
+    _JL,         // Jupyter Layout: JupyterLab and JupyterNotebook shortcuts using default shortcut setup
     _EL,         // KDE Layout: Shortcuts for KDE desktop using default KDE shortcuts settings
 };
 
@@ -75,6 +82,9 @@ enum ctrl_keycodes {
     ROUT_VD,               // Timeout Value Decrease. Decrease idle time out before LED disabled
     ROUT_FM,               // RGB timeout fast mode toggle
     COPY_ALL,              // Copy all text using ctrl(a+c)
+    LOCK_TG,               // Lock keyboard toggle to enable or disable keys
+    KP_LIVE,              // Keep computer alive by sending useless mouse movement.
+    // ================================= Add new keycodes above this line =======================================
     TERMINAL,              // CTRL+ALT+T
 };
 
